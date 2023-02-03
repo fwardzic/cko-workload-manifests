@@ -49,3 +49,12 @@ spec:
      vrf:
        name: calico1_vrf
        tenant: calico1
+    context-2:
+     aep: infra_aaep
+     l3out:
+       name: ocp1-rtr-l3out
+       external_networks:
+       - ocp1-rtr-extepg
+     vrf:
+       name: ocp1_vrf
+       tenant: common

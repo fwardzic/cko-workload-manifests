@@ -30,7 +30,7 @@ data:
         aep: infra_aaep
         svi:
           floating_ip: 192.168.12.100/24
-          secondary_ip: 192.168.12.1/24
+          secondary_ip: 192.168.12.254/24
           vlan_id: 272       
           mtu: 9000
         bgp:
@@ -47,19 +47,21 @@ data:
     net_config:
       node_subnet: 192.168.12.0/24
       pod_subnet: 10.2.0.0/16
-      extern_dynamic: 10.10.11.0/16
-      cluster_svc_subnet: 10.96.0.0/16
+      extern_dynamic: 10.72.0.0/16
+      cluster_svc_subnet: 10.96.0.0/12
     topology:
       rack:
       - id: 1
         aci_pod_id: 1
         leaf:
         - id: 101
+          local_ip: 192.168.12.251
         - id: 102
+          local_ip: 192.168.12.252
         node:
-        - name: k8sCalico2-node-1           # K8s nodes
-        - name: k8sCalico2-node-2
-        - name: k8sCalico2-node-3
+        - name: calico2-node-1           # K8s nodes
+        - name: calico2-node-2
+        - name: calico2-node-3
     fabricinfra:
       name: krk-dmz-fab1
     cni: calico

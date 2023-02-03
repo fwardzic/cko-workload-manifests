@@ -24,12 +24,12 @@ spec:
   internal_subnets:
     - 192.168.11.0/24
     - 192.168.13.0/24
-    - 10.62.0.0/16
+    - 10.61.0.0/16
     - 10.63.0.0/16
     - 10.64.0.0/16
     - 10.65.0.0/16
   external_subnets:
-    - 10.72.0.0/24
+    - 10.71.0.0/24
     - 10.73.0.0/24
     - 10.74.0.0/24
     - 10.75.0.0/24
@@ -57,9 +57,9 @@ spec:
       - id: 101
       - id: 102
       node:
-      - name: k8sCalico1-node-1
-      - name: k8sCalico1-node-2
-      - name: k8sCalico1-node-3
+      - name: calico1-node-1
+      - name: calico1-node-2
+      - name: calico1-node-3
   bgp:
     remote_as_numbers:
       - 64601

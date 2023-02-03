@@ -5,7 +5,7 @@ metadata:
   namespace: netop-manager
 spec:
   cluster_name: ocp1
-  cluster_network_profile_selector:
+  cluster_group_profile_selector:
     matchLabels:
      distro: openshift
      location: krk-dmz
