@@ -1,0 +1,12 @@
+apiVersion: netop.mgr/v1alpha1
+kind: ClusterProfile
+metadata:
+  name: calico1
+  namespace: netop-manager
+spec:
+  cluster_name: calico1
+  cluster_group_profile_selector:
+    matchLabels:
+     distro: kubernetes
+     location: krk-dmz
+     pod-network: calico

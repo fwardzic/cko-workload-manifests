@@ -1,0 +1,51 @@
+apiVersion: netop.mgr/v1alpha1
+kind: FabricInfra
+metadata:
+  name: krk-dmz-fab1
+  namespace: netop-manager
+  labels:
+    fabric: krk-dmz-fab1
+    site: krk-dmz
+spec:
+  credentials:
+    hosts:
+    - 172.18.0.120
+    secretRef:
+      name: apic-credentials
+  fabric_type: aci
+  infra_vlan: 3967
+  mcast_subnets:
+    - 225.162.0.0/16
+    - 225.163.0.0/16
+    - 225.164.0.0/16
+    - 225.165.0.0/16
+    - 225.166.0.0/16
+    - 225.167.0.0/16
+  internal_subnets:
+    - 192.168.11.0/24
+    - 192.168.13.0/24
+    - 10.62.0.0/16
+    - 10.63.0.0/16
+    - 10.64.0.0/16
+    - 10.65.0.0/16
+  external_subnets:
+    - 10.72.0.0/24
+    - 10.73.0.0/24
+    - 10.74.0.0/24
+    - 10.75.0.0/24
+  vlans:
+    - 271
+    - 273
+    - 274
+    - 275
+    - 276
+  contexts:
+    context-1:
+     aep: infra_aaep
+     l3out:
+       name: calico1-rtr-l3out
+       external_networks:
+       - calico1-rtr-extepg
+     vrf:
+       name: calico1_vrf
+       tenant: calico1

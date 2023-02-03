@@ -1,0 +1,12 @@
+apiVersion: netop.mgr/v1alpha1
+kind: ClusterProfile
+metadata:
+  name: ocp1
+  namespace: netop-manager
+spec:
+  cluster_name: ocp1
+  cluster_network_profile_selector:
+    matchLabels:
+     distro: openshift
+     location: krk-dmz
+     pod-network: aci-cni
