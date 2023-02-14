@@ -10,3 +10,13 @@ spec:
      distro: openshift
      location: krk-dmz
      pod-network: aci-cni
+     release: "4.10"
+     platform: esx
+  config_overrides:
+    aci_cni_config:
+      aci_config:
+        vmm_domain:
+          nested_inside:
+            type: vmware
+            name: ACI-DMZ-VDS02
+            installer_provisioned_lb_ip: 10.61.0.2

@@ -6,6 +6,8 @@ metadata:
   labels:
     distro: openshift
     location: krk-dmz
+    release: "4.10"
+    platform: esx
     pod-network: aci-cni
 spec:
   selector:
@@ -14,6 +16,10 @@ spec:
       site: krk-dmz
   config_overrides:
     cni: aci
+    distro:
+      type: openshift
+      release: "4.10"
+      platform: esx
     connectivity_checker:
       error_pods_reporting_enable: true
       reachability_test_enable:
